@@ -1,0 +1,44 @@
+{
+  "name": "jspm-bug-02",
+  "version": "1.0.0",
+  "description": "A simple project to illustrate a problem with the source-map for the CSS bundle.",
+  "main": "lib/index.js",
+  "registry": "npm",
+  "scripts": {
+    "bundle": "jspm bundle lib/index dist/bundle.js",
+    "serve": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ncochard/jspm-bug-02.git"
+  },
+  "keywords": [
+    "JSPM",
+    "CSS",
+    "bundle"
+  ],
+  "author": "Nicolas Cochard",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ncochard/jspm-bug-02/issues"
+  },
+  "homepage": "https://github.com/ncochard/jspm-bug-02#readme",
+  "jspm": {
+    "main": "index",
+    "format": "es6",
+    "directories": {
+      "lib": "lib"
+    },
+    "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.5",
+      "clean-css": "^3.4.1",
+      "css": "github:systemjs/plugin-css@^0.1.15",
+      "jquery": "github:components/jquery@^2.1.4"
+    },
+    "devDependencies": {
+      "babel": "babel-core@^5.1.13",
+      "babel-runtime": "^5.1.13",
+      "core-js": "^0.9.4"
+    }
+  }
+}
