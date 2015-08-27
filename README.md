@@ -1,5 +1,7 @@
 I created this to illustrate what I think is a bug in the CSS bundle in JSPM.
 
+Track this issue at [https://github.com/jspm/jspm-cli/issues/1065](https://github.com/jspm/jspm-cli/issues/1065).
+
 To recreate this bug, follow these instructions.
 
     git clone https://github.com/ncochard/jspm-bug-02.git
