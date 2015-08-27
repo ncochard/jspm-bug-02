@@ -1,6 +1,6 @@
 I created this to illustrate what I think is a bug in the CSS bundle in JSPM.
 
-To recreate this bud, follow these instructions.
+To recreate this bug, follow these instructions.
 
     git clone https://github.com/ncochard/jspm-bug-02.git
     cd jspm-bug-02
