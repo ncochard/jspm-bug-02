@@ -16,4 +16,4 @@ Actual:   `/*# sourceMappingURL=dist/bundle.css.map*/`
 
 Expected: `/*# sourceMappingURL=bundle.css.map*/`
 
-This problem is illustrated if you right-click on an element in the browser and click on "Inspect Element".
+This problem is illustrated if you right-click on an element in Chrome and click on "Inspect Element". You can see that the browser indicates that the styles are defined in the file 'bundle.css' rather than 'bootstrap.css'.
