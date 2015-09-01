@@ -1,7 +1,14 @@
-"format register";
-
+"bundle";
 (function() {
-function define(){};  define.amd = {};
+var _removeDefine = System.get("@@amd-helpers").createDefine();
+define("github:components/jquery@2.1.4", ["github:components/jquery@2.1.4/jquery"], function(main) {
+  return main;
+});
+
+_removeDefine();
+})();
+(function() {
+var _removeDefine = System.get("@@amd-helpers").createDefine();
 (function(global, factory) {
   if (typeof module === "object" && typeof module.exports === "object") {
     module.exports = global.document ? factory(global, true) : function(w) {
@@ -2102,11 +2109,11 @@ function define(){};  define.amd = {};
     },
     ready: function(wait) {
       if (wait === true ? --jQuery.readyWait : jQuery.isReady) {
-        return ;
+        return;
       }
       jQuery.isReady = true;
       if (wait !== true && --jQuery.readyWait > 0) {
-        return ;
+        return;
       }
       readyList.resolveWith(document, [jQuery]);
       if (jQuery.fn.triggerHandler) {
@@ -2348,7 +2355,7 @@ function define(){};  define.amd = {};
           if (data !== undefined) {
             return data;
           }
-          return ;
+          return;
         }
         this.each(function() {
           var data = data_user.get(this, camelKey);
@@ -2518,7 +2525,7 @@ function define(){};  define.amd = {};
           origType,
           elemData = data_priv.get(elem);
       if (!elemData) {
-        return ;
+        return;
       }
       if (handler.handler) {
         handleObjIn = handler;
@@ -2595,7 +2602,7 @@ function define(){};  define.amd = {};
           origType,
           elemData = data_priv.hasData(elem) && data_priv.get(elem);
       if (!elemData || !(events = elemData.events)) {
-        return ;
+        return;
       }
       types = (types || "").match(rnotwhite) || [""];
       t = types.length;
@@ -2651,10 +2658,10 @@ function define(){};  define.amd = {};
           namespaces = hasOwn.call(event, "namespace") ? event.namespace.split(".") : [];
       cur = tmp = elem = elem || document;
       if (elem.nodeType === 3 || elem.nodeType === 8) {
-        return ;
+        return;
       }
       if (rfocusMorph.test(type + jQuery.event.triggered)) {
-        return ;
+        return;
       }
       if (type.indexOf(".") >= 0) {
         namespaces = type.split(".");
@@ -2673,7 +2680,7 @@ function define(){};  define.amd = {};
       data = data == null ? [event] : jQuery.makeArray(data, [event]);
       special = jQuery.event.special[type] || {};
       if (!onlyHandlers && special.trigger && special.trigger.apply(elem, data) === false) {
-        return ;
+        return;
       }
       if (!onlyHandlers && !special.noBubble && !jQuery.isWindow(elem)) {
         bubbleType = special.delegateType || type;
@@ -2736,7 +2743,7 @@ function define(){};  define.amd = {};
       args[0] = event;
       event.delegateTarget = this;
       if (special.preDispatch && special.preDispatch.call(this, event) === false) {
-        return ;
+        return;
       }
       handlerQueue = jQuery.event.handlers.call(this, event, handlers);
       i = 0;
@@ -3151,7 +3158,7 @@ function define(){};  define.amd = {};
         udataCur,
         events;
     if (dest.nodeType !== 1) {
-      return ;
+      return;
     }
     if (data_priv.hasData(src)) {
       pdataOld = data_priv.access(src);
@@ -3565,7 +3572,7 @@ function define(){};  define.amd = {};
     return {get: function() {
         if (conditionFn()) {
           delete this.get;
-          return ;
+          return;
         }
         return (this.get = hookFn).apply(this, arguments);
       }};
@@ -3577,7 +3584,7 @@ function define(){};  define.amd = {};
         container = document.createElement("div"),
         div = document.createElement("div");
     if (!div.style) {
-      return ;
+      return;
     }
     div.style.backgroundClip = "content-box";
     div.cloneNode(true).style.backgroundClip = "";
@@ -3770,7 +3777,7 @@ function define(){};  define.amd = {};
     cssProps: {"float": "cssFloat"},
     style: function(elem, name, value, extra) {
       if (!elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style) {
-        return ;
+        return;
       }
       var ret,
           type,
@@ -3786,7 +3793,7 @@ function define(){};  define.amd = {};
           type = "number";
         }
         if (value == null || value !== value) {
-          return ;
+          return;
         }
         if (type === "number" && !jQuery.cssNumber[origName]) {
           value += "px";
@@ -4494,7 +4501,7 @@ function define(){};  define.amd = {};
           ret,
           nType = elem.nodeType;
       if (!elem || nType === 3 || nType === 8 || nType === 2) {
-        return ;
+        return;
       }
       if (typeof elem.getAttribute === strundefined) {
         return jQuery.prop(elem, name, value);
@@ -4589,7 +4596,7 @@ function define(){};  define.amd = {};
           notxml,
           nType = elem.nodeType;
       if (!elem || nType === 3 || nType === 8 || nType === 2) {
-        return ;
+        return;
       }
       notxml = nType !== 1 || !jQuery.isXMLDoc(elem);
       if (notxml) {
@@ -4750,13 +4757,13 @@ function define(){};  define.amd = {};
           ret = elem.value;
           return typeof ret === "string" ? ret.replace(rreturn, "") : ret == null ? "" : ret;
         }
-        return ;
+        return;
       }
       isFunction = jQuery.isFunction(value);
       return this.each(function(i) {
         var val;
         if (this.nodeType !== 1) {
-          return ;
+          return;
         }
         if (isFunction) {
           val = value.call(this, i, jQuery(this).val());
@@ -5270,7 +5277,7 @@ function define(){};  define.amd = {};
             modified,
             statusText = nativeStatusText;
         if (state === 2) {
-          return ;
+          return;
         }
         state = 2;
         if (timeoutTimer) {
@@ -5791,7 +5798,7 @@ function define(){};  define.amd = {};
           },
           doc = elem && elem.ownerDocument;
       if (!doc) {
-        return ;
+        return;
       }
       docElem = doc.documentElement;
       if (!jQuery.contains(docElem, elem)) {
@@ -5808,7 +5815,7 @@ function define(){};  define.amd = {};
     },
     position: function() {
       if (!this[0]) {
-        return ;
+        return;
       }
       var offsetParent,
           offset,
@@ -5901,10 +5908,8 @@ function define(){};  define.amd = {};
   };
   jQuery.fn.andSelf = jQuery.fn.addBack;
   if (typeof define === "function" && define.amd) {
-    System.register("github:components/jquery@2.1.4/jquery", [], false, function(__require, __exports, __module) {
-      return (function() {
-        return jQuery;
-      }).call(this);
+    define("github:components/jquery@2.1.4/jquery", [], function() {
+      return jQuery;
     });
   }
   var _jQuery = window.jQuery,
@@ -5923,16 +5928,10 @@ function define(){};  define.amd = {};
   }
   return jQuery;
 }));
+
+_removeDefine();
 })();
-(function() {
-function define(){};  define.amd = {};
-System.register("github:components/jquery@2.1.4", ["github:components/jquery@2.1.4/jquery"], false, function(__require, __exports, __module) {
-  return (function(main) {
-    return main;
-  }).call(this, __require('github:components/jquery@2.1.4/jquery'));
-});
-})();
-System.register('lib/index', ['github:components/jquery@2.1.4', 'github:twbs/bootstrap@3.3.5/css/bootstrap.css!github:systemjs/plugin-css@0.1.15'], function (_export) {
+System.register('lib/index.js', ['github:components/jquery@2.1.4', 'github:twbs/bootstrap@3.3.5/css/bootstrap.css!github:systemjs/plugin-css@0.1.15'], function (_export) {
   'use strict';
 
   var $;
