@@ -6,7 +6,7 @@ To recreate this bug, follow these instructions.
 
     git clone https://github.com/ncochard/jspm-bug-02.git
     cd jspm-bug-02
-    jspm bundle lib/index dist/bundle.js
+    jspm bundle lib/index dist/bundle.js --inject
     npm install serve -g
     serve
 
