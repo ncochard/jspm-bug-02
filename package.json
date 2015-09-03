@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "registry": "npm",
   "scripts": {
-    "bundle": "jspm bundle lib/index dist/bundle.js",
+    "bundle": "jspm bundle lib/index dist/bundle.js --inject",
     "serve": "serve"
   },
   "repository": {

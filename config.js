@@ -11,6 +11,14 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+  bundles: {
+    "dist/bundle.js": [
+      "lib/index.js",
+      "github:components/jquery@2.1.4",
+      "github:components/jquery@2.1.4/jquery",
+      "github:twbs/bootstrap@3.3.5/css/bootstrap.css!github:systemjs/plugin-css@0.1.15"
+    ]
+  },
   buildCSS: true,
   separateCSS: true,
 
